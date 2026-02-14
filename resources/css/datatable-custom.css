@@ -1,0 +1,51 @@
+/* resources/css/datatable-custom.css */
+
+/* Override default DataTables styling to match your theme */
+.dataTables_wrapper {
+    padding: 0;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    @apply border border-gray-300 rounded-md px-3 py-2 text-sm;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    @apply border border-gray-300 rounded-md px-3 py-2 text-sm ml-2;
+}
+
+table.dataTable {
+    @apply w-full border-collapse;
+}
+
+table.dataTable thead th {
+    @apply bg-gray-50 border-b-2 border-gray-200 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+table.dataTable tbody td {
+    @apply px-4 py-3 border-b border-gray-200 text-sm text-gray-900;
+}
+
+table.dataTable tbody tr:hover {
+    @apply bg-gray-50 cursor-pointer;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    @apply mt-4;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    @apply px-3 py-2 mx-1 border border-gray-300 rounded-md text-sm bg-white hover:bg-gray-50;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
