@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AttendanceDataTableController;
 use App\Http\Controllers\Api\CompanyDataTableController;
+use App\Http\Controllers\Api\IntegrationController;
 use App\Http\Controllers\AttendanceDashboardController;
 use App\Http\Controllers\CompanyDashboardController;
 use App\Http\Controllers\GoogleAuthController;
@@ -35,7 +36,17 @@ Route::prefix('api')->middleware(['auth'])->group(function () {
     // DataTable endpoints
     Route::get('/attendance/datatable', [AttendanceDataTableController::class, 'index']);
     Route::get('/companies/datatable', [CompanyDataTableController::class, 'index']);
+
+    Route::prefix('/integrations')->group(function () {
+    Route::get('/', [IntegrationController::class, 'index']);
+    Route::post('/connect', [IntegrationController::class, 'connect']);
+    Route::delete('/{provider}', [IntegrationController::class, 'disconnect']);
+    Route::post('/{provider}/test', [IntegrationController::class, 'test']);
+    Route::put('/{provider}/sync-settings', [IntegrationController::class, 'updateSyncSettings']);
 });
+});
+
+
 
 require __DIR__.'/settings.php';
 

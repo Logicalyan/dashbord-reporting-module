@@ -41,4 +41,12 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
 
+    'external_api' => [
+        'base_url' => env('EXTERNAL_API_BASE_URL'),
+        'timeout' => env('EXTERNAL_API_TIMEOUT', 30),
+        'retries' => env('EXTERNAL_API_RETRIES', 3),
+        'system_token' => env('EXTERNAL_API_SYSTEM_TOKEN'),
+        // 'verify_ssl' => env('EXTERNAL_API_VERIFY_SSL', true),
+    ],
+
 ];

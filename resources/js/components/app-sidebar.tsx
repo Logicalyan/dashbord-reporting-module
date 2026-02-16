@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, BuildingIcon, CalendarIcon, Folder, LayoutDashboardIcon, TableIcon } from 'lucide-react';
+import { BookOpen, BuildingIcon, CalendarIcon, Folder, LayoutDashboardIcon, LinkIcon, TableIcon } from 'lucide-react';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -61,6 +61,11 @@ const footerNavItems: NavItem[] = [
         title: 'Documentation',
         href: 'https://laravel.com/docs/starter-kits#react',
         icon: BookOpen,
+    },
+    {
+        title: 'Integrations',
+        href: '/settings/integrations',
+        icon: LinkIcon,
     },
 ];
 
